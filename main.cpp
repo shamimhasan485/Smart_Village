@@ -14,7 +14,6 @@
 ///==================================================///
 
 GLint i, j, k;
-GLfloat sheep_x=0;
 GLfloat sun_spin=0, sun_x=0, sun_y=0;
 GLfloat ax=0,bx=0,cx=0,dx=0,str=500.0,mn=500.0;
 GLfloat sr=0.0,sg=0.749,sb=1.0;
@@ -949,6 +948,14 @@ void Windmill_Two(){
     glPopMatrix();
 
 }
+void Windmill_Three(){
+    glColor3f(0.11, 0.23, 0.36);
+    glPushMatrix();
+    glTranslatef(108,-90,0);
+    Windmill();
+    glPopMatrix();
+
+}
 ///Object_End
 ///=========================================================================================================///
 
@@ -964,6 +971,9 @@ void display(void)
 
     ///*** Object_Layer ***///
     Sun();
+
+    Windmill_Three();
+
     Hill_Big_One();
     Tilla_Four();
 
@@ -977,6 +987,7 @@ void display(void)
 
     Windmill_One();
     Windmill_Two();
+
 
     Tilla_One();
     Tilla_Two();
@@ -1008,9 +1019,6 @@ void display(void)
     cloud_six();
     field();
 
-
-
-
 	glFlush();
 }
 ///========================///
@@ -1019,14 +1027,12 @@ void display(void)
 ///*** Sun_Move ***///
 void sun_move(){
 
-    sun_spin = sun_spin + 0.008;
+    sun_spin = sun_spin + 0.0008;
 
 }
 void move_right(){
 
     sun_move();
-
-    sheep_x = sheep_x +1000;
 
     spin = spin +.1;
     ax = ax + .05;
@@ -1034,9 +1040,6 @@ void move_right(){
     cx = cx + .10;
     dx = dx + .15;
 
-    if (sheep_x>2){
-        sheep_x = +.001;
-    }
     if(cx>1000){
         cx = -300;
     }
