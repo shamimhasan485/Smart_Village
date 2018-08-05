@@ -7,7 +7,7 @@
 #define PI 3.1416
 
 ///==================================================///
-///         Author@Shmim Hasan                       ///
+///         Author@Shamim Hasan                       ///
 ///         Id: 151-15-4965                          ///
 ///         BSc In CSE                               ///
 ///         Daffodil International University        ///
